@@ -6,10 +6,16 @@ import pandas as pd
 import os
 
 # source file running it at home
-source_file = r'C:\Users\scott\OneDrive\NPLW-25\Data analytics\GPS\2025-Belconnen-NPLW-data.xlsx'
+# source_file = r'C:\Users\scott\OneDrive\NPLW-25\Data analytics\GPS\2025-Belconnen-NPLW-data.xlsx'
 
 # Source file for web
 # source_file = '2025-Belconnen-NPLW-data.xlsx'
+
+# local
+# source_file = r'C:\Users\scott\OneDrive\NPLW-25\Data analytics\GPS\2025-Belconnen-NPLW-data.xlsx'
+# internet
+source_file = '2025-Belconnen-NPLW-data.xlsx'
+
 
 df = pd.read_excel(source_file, sheet_name='individual stats')
 

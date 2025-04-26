@@ -28,7 +28,7 @@ app.layout = dbc.Container([
     dbc.Row(
         dbc.Col(html.Div([
             html.Img(src='/assets/test-clublogo.png', style={'height': '70px', 'margin-right': '20px'}),
-            html.H1("Belconnen United NPLW - GPS Dashboard - Season 2025", 
+            html.H1("2025 NPLW - GPS - Player-data", 
                     className='text-center text-white',
                     style={'font-family': 'Roboto', 'font-size': '36px', 'color': '#FFFFFF', 
                            'background': 'linear-gradient(to right, #000080, #87CEEB)',  # Gradient from navy to sky blue

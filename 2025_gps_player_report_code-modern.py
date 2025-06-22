@@ -5,9 +5,7 @@ from dash import dash_table
 from dash import ctx
 from dash import Dash
 import plotly.express as px
-import gspread
 import plotly.graph_objects as go
-from oauth2client.service_account import ServiceAccountCredentials
 import dash_bootstrap_components as dbc
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor

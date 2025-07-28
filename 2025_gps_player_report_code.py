@@ -251,8 +251,14 @@ def create_power_plays_chart(df_filtered, selected_player, sort_order):
 
     # Layout styling
     fig.update_layout(
-        title=f"Power Plays - {selected_player}",
-        title_font=dict(family="Segoe UI Black", size=20, color="white"),
+        title={
+            'text': f"<b>Power Plays - {selected_player}</b>",
+            'font': dict(family="Segoe UI Black", size=24, color="white"),
+            'x': 0.5,
+            'y': 0.95,
+            'xanchor': 'center',
+            'yanchor': 'top'
+        },
         xaxis_title="Round",
         yaxis_title="Power Plays",
         font=dict(family="Segoe UI", size=14, color="white"),
@@ -261,19 +267,24 @@ def create_power_plays_chart(df_filtered, selected_player, sort_order):
         xaxis=dict(
             showline=True,
             showgrid=False,
-            tickfont=dict(size=12),
+            tickfont=dict(size=12, color="white"),
+            linecolor='white'
         ),
         yaxis=dict(
             showline=True,
             gridcolor="gray",
             zeroline=True,
-            tickfont=dict(size=12),
+            tickfont=dict(size=12, color="white"),
+            linecolor='white'
         ),
         hoverlabel=dict(font=dict(family="Segoe UI")),
-        margin=dict(l=40, r=40, t=40, b=40),
+        margin=dict(l=20, r=20, t=60, b=20),
     )
 
     return fig
+
+
+
 
 
 # Updated Function to create the Sprint Distance Chart
@@ -367,7 +378,7 @@ def create_sprint_distance_chart(df_filtered, selected_player, sort_order):
             'x': 0.5,
             'xanchor': 'center',
             'yanchor': 'top',
-            'font': {'size': 24, 'family': 'Roboto', 'color': 'white'}
+            'font': {'size': 24, 'family': 'Segoe UI Black', 'color': 'white'}
         },
         xaxis_title='Round',
         yaxis_title='Sprint Distance (m)',
@@ -378,7 +389,7 @@ def create_sprint_distance_chart(df_filtered, selected_player, sort_order):
             linecolor='white',
             linewidth=2,
             ticks='outside',
-            tickfont=dict(family='Roboto', size=14, color='white')
+            tickfont=dict(family='Segoe UI', size=14, color='white')
         ),
         yaxis=dict(
             showgrid=True,
@@ -387,7 +398,7 @@ def create_sprint_distance_chart(df_filtered, selected_player, sort_order):
             showline=True,
             linewidth=2,
             linecolor='white',
-            tickfont=dict(family='Roboto', size=14, color='white')
+            tickfont=dict(family='Segoe UI', size=14, color='white')
         ),
         plot_bgcolor='#1e1e1e',  # Dark theme background for the plot area
         paper_bgcolor='#1e1e1e', # Dark theme background for the entire page
@@ -396,7 +407,7 @@ def create_sprint_distance_chart(df_filtered, selected_player, sort_order):
             y=1.1,
             bgcolor='rgba(0, 0, 0, 0)',
             bordercolor='rgba(0, 0, 0, 0)',
-            font=dict(family='Roboto', size=12, color='white')
+            font=dict(family='Segoe UI', size=14, color='white')
         ),
         margin=dict(l=20, r=20, t=60, b=20)  # Tighter margins for a clean look
     )
@@ -469,20 +480,20 @@ def create_distance_per_min_chart(df_filtered, selected_player, sort_order):
         xaxis=dict(
             showline=True,
             showgrid=False,
-            tickfont=dict(size=12, family='Segoe UI', color='white')
+            tickfont=dict(size=14, family='Segoe UI', color='white')
         ),
         yaxis=dict(
             showline=True,
             gridcolor='gray',
             zeroline=True,
-            tickfont=dict(size=12, family='Segoe UI', color='white')
+            tickfont=dict(size=14, family='Segoe UI', color='white')
         ),
-        margin=dict(l=40, r=40, t=40, b=40),
+        margin=dict(l=20, r=20, t=60, b=20),
         legend=dict(
             x=0.8,
             y=1.1,
             bgcolor='rgba(0,0,0,0)',
-            font=dict(family='Segoe UI', size=12, color='white')
+            font=dict(family='Segoe UI', size=14, color='white')
         ),
         hoverlabel=dict(font=dict(family='Segoe UI'))
     )
@@ -556,12 +567,9 @@ def create_top_speed_chart(df_filtered, selected_player, sort_order):
     # Layout styling
     fig.update_layout(
         barmode='group',
-        title=dict(
-            text=f"Top Speed Comparison - {selected_player}",
-            x=0,
-            xanchor='left',
-            font=dict(family="Segoe UI Black", size=20, color="white")
-        ),
+        title=f"Top Speed Comparison - {selected_player}",
+        title_font=dict(family="Segoe UI Black", size=24, color="white"),
+        title_x=0.5,  # Centers the title
         xaxis_title="Round",
         yaxis_title="Top Speed (m/s)",
         font=dict(family="Segoe UI", size=14, color="white"),
@@ -570,17 +578,18 @@ def create_top_speed_chart(df_filtered, selected_player, sort_order):
         xaxis=dict(
             showline=True,
             showgrid=False,
-            tickfont=dict(size=12),
+            tickfont=dict(size=14),
         ),
         yaxis=dict(
             showline=True,
             gridcolor="gray",
             zeroline=True,
-            tickfont=dict(size=12),
+            tickfont=dict(size=14),
         ),
         hoverlabel=dict(font=dict(family="Segoe UI")),
-        margin=dict(l=40, r=40, t=40, b=40),
+        margin=dict(l=20, r=20, t=60, b=20),
     )
+
 
     return fig
 
@@ -627,7 +636,8 @@ def create_player_load_chart(df_filtered, selected_player, sort_order):
 
     fig.update_layout(
         title=f"Player Load - {selected_player}",
-        title_font=dict(family="Segoe UI Black", size=20, color="white"),
+        title_font=dict(family="Segoe UI Black", size=24, color="white"),
+        title_x=0.5,  # Center the title
         xaxis_title="Round",
         yaxis_title="Player Load",
         font=dict(family="Segoe UI", size=14, color="white"),
@@ -636,17 +646,18 @@ def create_player_load_chart(df_filtered, selected_player, sort_order):
         xaxis=dict(
             showline=True,
             showgrid=False,
-            tickfont=dict(size=12),
+            tickfont=dict(size=14),
         ),
         yaxis=dict(
             showline=True,
             gridcolor="gray",
             zeroline=True,
-            tickfont=dict(size=12),
+            tickfont=dict(size=14),
         ),
         hoverlabel=dict(font=dict(family="Segoe UI")),
-        margin=dict(l=40, r=40, t=40, b=40),
+        margin=dict(l=20, r=20, t=60, b=20),
     )
+
 
     return fig
 
@@ -705,7 +716,8 @@ def create_accel_decel_chart(df_filtered, selected_player, sort_order):
 
     fig.update_layout(
         title=f"Accelerations/Decelerations >3m/s² - {selected_player}",
-        title_font=dict(family="Segoe UI Black", size=20, color="white"),
+        title_font=dict(family="Segoe UI Black", size=24, color="white"),
+        title_x=0.5,  # Center the title
         xaxis_title="Round",
         yaxis_title="Count",
         font=dict(family="Segoe UI", size=14, color="white"),
@@ -714,18 +726,19 @@ def create_accel_decel_chart(df_filtered, selected_player, sort_order):
         xaxis=dict(
             showline=True,
             showgrid=False,
-            tickfont=dict(size=12, color='white')
+            tickfont=dict(size=14, color='white')
         ),
         yaxis=dict(
             showline=True,
             gridcolor="gray",
             zeroline=True,
-            tickfont=dict(size=12, color='white')
+            tickfont=dict(size=14, color='white')
         ),
         hoverlabel=dict(font=dict(family="Segoe UI")),
-        margin=dict(l=40, r=40, t=40, b=40),
+        margin=dict(l=20, r=20, t=60, b=20),
         barmode="group"
     )
+
 
     return fig
 

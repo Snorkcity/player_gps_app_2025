@@ -480,13 +480,13 @@ def create_distance_per_min_chart(df_filtered, selected_player, sort_order):
         xaxis=dict(
             showline=True,
             showgrid=False,
-            tickfont=dict(size=14, family='Segoe UI', size=14, color='white')
+            tickfont=dict(family='Segoe UI', size=14, color='white')
         ),
         yaxis=dict(
             showline=True,
             gridcolor='gray',
             zeroline=True,
-            tickfont=dict(size=14, family='Segoe UI', size=14, color='white')
+            tickfont=dict(family='Segoe UI', size=14, color='white')
         ),
         margin=dict(l=20, r=20, t=60, b=20),
         legend=dict(
